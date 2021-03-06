@@ -9,6 +9,7 @@ IMAGES+= windows-2012-r2
 IMAGES+= windows-2016
 IMAGES+= windows-2019
 IMAGES+= windows-2019-uefi
+IMAGES+= windows-2022
 IMAGES+= windows-10-1809
 IMAGES+= windows-10-20h2
 
@@ -16,6 +17,7 @@ IMAGES+= windows-10-20h2
 HYPERV_IMAGES+= windows-2012-r2
 HYPERV_IMAGES+= windows-2016
 HYPERV_IMAGES+= windows-2019
+HYPERV_IMAGES+= windows-2022
 HYPERV_IMAGES+= windows-10-1809
 HYPERV_IMAGES+= windows-10-20h2
 
