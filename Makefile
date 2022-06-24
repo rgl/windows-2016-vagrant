@@ -206,11 +206,12 @@ tmp/%-vsphere/autounattend.xml: %/autounattend.xml
 	windows-10-20h2/autounattend.xml
 
 drivers:
-	rm -rf drivers.tmp
-	mkdir -p drivers.tmp
 	@# see https://docs.fedoraproject.org/en-US/quick-docs/creating-windows-virtual-machines-using-virtio-drivers/index.html
 	@# see https://github.com/virtio-win/virtio-win-guest-tools-installer
 	@# see https://github.com/virtio-win/virtio-win-pkg-scripts
-	wget -P drivers.tmp https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/virtio-win-0.1.190-1/virtio-win-0.1.190.iso
-	7z x -odrivers.tmp drivers.tmp/virtio-win-*.iso
-	mv drivers.tmp drivers
+	if [ ! -f drivers/virtio-win-guest-tools.exe ]; then \
+	  mkdir -p drivers.tmp; \
+	  wget -P drivers.tmp https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/virtio-win-0.1.190-1/virtio-win-0.1.190.iso; \
+	  7z x -odrivers.tmp drivers.tmp/virtio-win-*.iso; \
+	  mv drivers.tmp drivers; \
+	fi;
